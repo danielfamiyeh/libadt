@@ -1,10 +1,13 @@
 struct List;
 
 //constructor
-struct List* listConst();
+struct List* listConst(int size);
 
 //display list items
-void printList(struct List* list);
+void listPrint(struct List* list);
+
+//display all list indexes
+void listPrintFull(struct List* list);
 
 //append to list
 void listAdd(struct List* list, int item);
@@ -26,3 +29,9 @@ int listSize(struct List* list);
 
 //return whether or not list is empty
 int listIsEmpty(struct List* list);
+
+// resizes list to a size given
+int listResize(struct List* list, int size);
+
+//truncates list to a size given
+int listTruncate(struct List* list, int size);

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250) (preloaded format=pdflatex 2020.1.10)  16 JAN 2020 15:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250) (preloaded format=pdflatex 2020.1.10)  16 JAN 2020 19:28
 entering extended mode
 **/home/kwaks/Algorithms/algorithms.tex
 (/home/kwaks/Algorithms/algorithms.tex
@@ -85,46 +85,65 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
-
-Overfull \hbox (51.00403pt too wide) in paragraph at lines 67--68
+ [1]
+Overfull \hbox (51.00403pt too wide) in paragraph at lines 68--69
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[1]
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 100--102
+
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 101--103
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 102--104
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 103--105
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 104--105
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 105--106
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [2]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 114.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 142.
  (/home/kwaks/.miktex/texmfs/install/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 114.
- [3] (/home/kwaks/Algorithms/algorithms.aux) ) 
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 142.
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 166--168
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 187.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 187.
+
+Overfull \hbox (75.00427pt too wide) in paragraph at lines 187--189
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[4]
+Overfull \hbox (51.00403pt too wide) in paragraph at lines 213--214
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[5] (/home/kwaks/Algorithms/algorithms.aux) ) 
 Here is how much of TeX's memory you used:
- 2103 strings out of 494411
- 27504 string characters out of 3174490
+ 2119 strings out of 494411
+ 27714 string characters out of 3174490
  285141 words of memory out of 3000000
- 6249 multiletter control sequences out of 15000+200000
+ 6265 multiletter control sequences out of 15000+200000
  8241 words of font info for 29 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 28i,4n,51p,200b,1238s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,5n,51p,200b,1531s stack positions out of 5000i,500n,10000p,200000b,50000s
 </home/kwaks/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/kwaks/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/kwaks/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/kwaks/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/kwaks/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/kwaks/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></home/kwaks/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/kwaks/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on /home/kwaks/Algorithms/algorithms.pdf (4 pages, 103062 bytes).
+Output written on /home/kwaks/Algorithms/algorithms.pdf (6 pages, 110057 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
+ 53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

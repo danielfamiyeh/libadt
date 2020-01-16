@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define ARRAY_LIST_CAPACITY 50
-
 struct List
 {
     int limit;
@@ -11,12 +9,12 @@ struct List
 };
 
 //constructor
-struct List* listConst()
+struct List* listConst(int size)
 {
     struct List* newList;
     newList = malloc(sizeof(struct List));
-    newList->entities = malloc(ARRAY_LIST_CAPACITY*sizeof(int));
-    newList->limit = ARRAY_LIST_CAPACITY;
+    newList->entities = malloc(size*sizeof(int));
+    newList->limit = size;
     newList->num = 0;
 
     return newList;  
@@ -39,7 +37,7 @@ int isValidIndex(int i, struct List* list)
 //add item to list
 int listAdd(struct List* list, int item)
 {
-	if(list->num<ARRAY_LIST_CAPACITY)
+	if(list->num<list->limit)
 	{
 		list->entities[list->num] = item;
 		list->num+=1;
@@ -73,7 +71,7 @@ int listRem(struct List* list, int index)
 	if(isValidIndex(index,list))
 	{
 		int* newEntities;
-		newEntities = malloc(sizeof(int) * ARRAY_LIST_CAPACITY);
+		newEntities = malloc(sizeof(int) * list->limit);
 
 		for(int i=0; i<list->num; i++)
 		{
@@ -125,15 +123,78 @@ int listSearch(struct List* list, int item)
 }
 
 //prints items in list
-void printList(struct List* list)
+void listPrint(struct List* list)
 {
 	if(list->num>0)
 	{
 		printf("[");
-		for(int i=0; i<sizeof(list->entities); i++)
+		for(int i=0; i<list->num; i++)
 		{
 			printf("%d ",list->entities[i]);
 		}
 		printf("]\n");
+	}
+}
+
+//Prints all indexes including those unoccupied
+void listPrintFull(struct List* list)
+{
+	if(list->num > 0)
+	{
+		printf("[");
+		for(int i=0; i<list->limit; i++)
+		{
+			printf("%d ",list->entities[i]);
+			
+		}
+		printf("]\n");	
+	}
+}
+
+//resizes the list
+int listResize(struct List* list, int size)
+{	
+	if(size > (sizeof(list->entities)/sizeof(int)+1))
+	{
+		int* newEntities = (int*)calloc(size, sizeof(int));
+
+		if(newEntities != NULL)
+		{
+			for(int i=0; i<list->num; i++)
+			{
+				newEntities[i] = list->entities[i];
+			}
+			list->entities = newEntities;
+			list->limit = size;
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}	
+	}
+	else
+	{
+		int* newEntities = realloc(list->entities, list->num*sizeof(int));
+		list->entities = newEntities;
+		list->limit = list->num;
+	}
+}
+
+//truncates list to a size given
+int listTruncate(struct List* list, int size)
+{
+	if(size > 0)
+	{
+		int* newEntities = (int*)calloc(size, sizeof(int));
+		if(newEntities != NULL)
+		{
+			for(int i=0; i<size; i++)
+			{
+				newEntities[i] = list->entities[i];
+			}
+			list->entities = newEntities;
+			list->limit = size;
+		}
 	}
 }

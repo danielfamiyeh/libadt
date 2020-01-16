@@ -6,16 +6,26 @@ int main()
 {
     struct List* l;
     int i;
-    l = listConst();
-    listAdd(l,3);
-    listAdd(l,7);
-    listAdd(l,4);
-    listRem(l,1);
-    listAdd(l,7);
-    printf("%d\n", listSearch(l,-4));
-    
-    listRead(l,2,&i);
-    printf("%d\n", i);
-    printList(l);
+    l = listConst(5);
+
+    for(int i=0; i<5; i++)
+    {
+        listAdd(l,i);
+    }    
+
+    listPrintFull(l); // prints [0 1 2 3 4]
+
+    listResize(l,10); 
+    listPrintFull(l); // prints [0 1 2 3 4 0 0 0 0 0]
+
+    listResize(l, 7); 
+    listPrintFull(l); // prints [0 1 2 3 4 0 0]
+
+    listResize(l,1); 
+    listPrintFull(l); // prints [0 1 2 3 4]
+
+    listTruncate(l,1);
+    listPrintFull(l);
+
     listDest(l);
 }
