@@ -1,0 +1,14 @@
+struct ComplexNumber;
+struct ComplexNumber* complexNumberConstructor(float real, float imag);
+void complexNumberDestructor(struct ComplexNumber* complexNumber);
+float complexNumberGetReal(struct ComplexNumber* cn);
+float complexNumberGetImag(struct ComplexNumber* cn);
+float complexNumberGetMag(struct ComplexNumber* cn);
+float complexNumberGetTheta(struct ComplexNumber* cn);
+void complexNumberDisplay(struct ComplexNumber* cn);
+void cmplxConj(struct ComplexNumber* cn);
+void cmplexAddIP(struct ComplexNumber* cn1, struct ComplexNumber* cn2);
+void cmplexSubIP(struct ComplexNumber* cn1, struct ComplexNumber* cn2);
+void cmplexMultIP(struct ComplexNumber* cn1, struct ComplexNumber* cn2);
+void cmplexDivIP(struct ComplexNumber* cn1, struct ComplexNumber* cn2);
+void cmplexAdd(struct ComplexNumber* cn1, struct ComplexNumber* cn2, struct ComplexNumber* res);
