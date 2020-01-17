@@ -1,0 +1,216 @@
+\documentclass{article}
+
+
+\usepackage{listings}
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+\title{libADT}
+\subtitle{An abstract data type library written in C.}
+\author{}
+\date{}
+
+
+
+\begin{document}
+\lstset{language=C}
+
+\pagenumbering{gobble}
+\maketitle
+\newpage{}
+\pagenumbering{arabic}
+\section{Lists}
+Lists are an abstract data type which are used to store a collection of (often) related objects.\\
+They can be ordered or unordered and are an example of a more general ADT called a 'container.
+Functions for the list ADT include:
+\begin{itemize}
+\item {Constructor} - to instantiate a new list.
+\item {Destructor} - to remove an instance of a list from memory.
+\item {Add} - to add an item to the end of the list.
+\item {Read} - to read the value at a given index of the list into a variable. 
+\item {Remove} - to remove an item in a list at a given index.
+\item {Size} - to return the number of items in the list.
+\item {isEmpty} - to return true if the list is empty, otherwise false.
+\item {Search} - to see if a given value exists within the list.
+\item {Resize} - resize the list as long as size is bigger.
+\end{itemize}
+
+\subsection*{ArrayList}
+\subsubsection*{Constructor(int size)}
+To instantiate a new ArrayList first define an List pointer.\\
+Then instantiate it with the constructor method \emph{listConst()}. \\
+When calling the constructor pass the size of the ArrayList you want to make.
+\begin{lstlisting}
+    struct List* newList;
+    newList = listConst(5); //Creates list of size 5
+\end{lstlisting}
+
+\subsubsection*{Destructor(void)}
+To free a list from memory call the \emph{listDest()} method and pass the list as an argument.
+\begin{lstlisting}
+    struct List* newList;
+    newList = listConst();
+
+    listDest(newList);
+\end{lstlisting}
+
+\subsubsection*{listAdd(struct List* list, int entity)}
+To add an item to the ArrayList use the \emph{listAdd()} method and pass the list and item as arguments.
+\begin{lstlisting}
+    struct List* newList;
+    newList = listConst();
+
+    listAdd(newList, 3);
+    //ArrayList now reads [3] + 0's for empty initialised indexes.
+\end{lstlisting}
+
+\subsubsection*{listRead(struct List* list, int index, int* var)}
+To add an item to the ArrayList use the \emph{listRead()} method and pass the list and item as arguments.
+\begin{lstlisting}
+    int var;
+    int newList;
+    listConst(newList);
+
+    listRead(newList, 3, &var);
+
+    printf("%d", var); //prints 3
+\end{lstlisting}
+
+\subsubsection*{listRem(struct List* list, int entity)}
+To remove an item from the ArrayList use the \emph{listRem()} method and pass the list and index to remove item.
+\begin{lstlisting}
+    struct List* newList;
+    newList = listConst();
+
+    listAdd(newList, 3); newList = [3]
+    listRem(newList, 1); //Removes 3 from list.
+\end{lstlisting}
+Objects will cascade down ArrayLists when removed too.
+\begin{lstlisting}
+    struct List* newList;
+    newList = listConst();
+
+    listAdd(newList, 5);
+    listAdd(newList, 1);
+    listAdd(newList, 3);
+
+    //List reads [5,1,3] + '0's for empty initialised indexes.
+
+    listRem(newList, 1); //Removes '1' from index 1 of list.
+
+    //List now reads [5,3] + '0's for empty initialised index.
+\end{lstlisting}
+
+\subsubsection*{listPrint(struct List* list)}
+The \emph{listPrint()} method prints all the values that have been added to the list in square brackets.
+\begin{lstlisting}
+    struct List* newList;
+    newList = listConst(5);
+
+    listAdd(newList, 3);
+    listAdd(newList,2);
+
+    listPrint(newList); //prints [3 2]
+\end{lstlisting}
+
+\subsubsection*{listPrintAll(struct List* list)}
+The \emph{listPrintAll()} method prints the value contained at all indexes. Even ones not yet occupied.
+\begin{lstlisting}
+    struct List* newList;
+    newList = listConst(5);
+
+    listPrintAll(newList); //prints [0 0 0 0 0]
+
+    listAdd(newList, 2);
+
+    listPrint(newList); //prints [2]
+    listPrintAll(newList); //prints [2 0 0 0 0]
+
+\end{lstlisting}
+
+\subsubsection*{listSize(struct List* list)}
+To get the number of items currently stored in the ArrayList use the\\
+\emph{listSize()} method.
+\begin{lstlisting}
+    struct List* newList;
+    newList = listConst();
+
+    for(int i=0; i<5; i++)
+    {
+        listAdd(newList, i);
+    }
+
+    printf("%d", listSize(newList)); //prints 5
+\end{lstlisting}
+\newpage
+\subsubsection*{listIsEmpty(struct List* list)}
+The \emph{listIsEmpty()} method returns 1 if the ArrayList is empty otherwise 0.
+
+\begin{lstlisting}
+    struct List* newList;
+    newList = listConst();
+
+    print("%d", listIsEmpty(newList)); //prints 1
+
+    listAdd(newList, 5); //newList = [5]
+
+    print("%d", listIsEmpty(newList)); //prints 0
+    
+\end{lstlisting}
+
+\subsubsection*{listResize(struct List* list, int size)}
+Resizes an ArrayList.\\
+If the size chosen is greater than the number of items in the ArrayList, the extra space is initialised with zeroes.\\
+
+\begin{lstlisting}
+    struct list* newList;
+    newList = listConst(5);
+    
+    for(int i=0; i<5; i++)
+    {
+        listAdd(l,i);
+    }
+    
+    listPrintAll(newList); //prints [0 1 2 3 4]
+
+    listResize(10);
+    listPrintAll(newList); //prints [0 1 2 3 4 0 0 0 0 0]
+
+    listResize(7);
+    listPrintAll(newList) //prints [0 1 2 3 4 0 0]
+
+    listResize(lnewList, 1);
+    listPrintAll(newList) //prints [0 1 2 3 4] - list isn't truncated.
+
+\end{lstlisting}
+If the size chose is lower than the number of indices occupied, the list will be resized to preserve occupied spaces.\\
+That is to say that the \emph{listResize()} does not truncate ArrayLists.
+\newpage
+\subsubsection*{listTruncate(struct List* list, int size)}
+The \emph{listTruncate()} method operates in the same manner as the \emph{listResize()} method except it wil truncate a list.
+\begin{lstlisting}
+struct list* newList;
+    newList = listConst(5);
+    
+    for(int i=0; i<5; i++)
+    {
+        listAdd(l,i);
+    }
+    
+    listPrintAll(newList); //prints [0 1 2 3 4]
+
+    listResize(10);
+    listPrintAll(newList); //prints [0 1 2 3 4 0 0 0 0 0]
+
+    listResize(7);
+    listPrintAll(newList) //prints [0 1 2 3 4 0 0]
+
+    listTruncate(newList, 1);
+    listPrintAll(newList) //prints [0 ] - list has been truncated.
+\end{lstlisting}
+
+\end{document}

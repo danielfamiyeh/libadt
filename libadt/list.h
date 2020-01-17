@@ -1,37 +1,21 @@
-struct List;
+struct SingleList;
 
 //constructor
-struct List* listConst(int size);
+struct SingleList* singleListConst();
 
-//display list items
-void listPrint(struct List* list);
+//destructor
+void singleListDest(struct SingleList* list);
 
-//display all list indexes
-void listPrintFull(struct List* list);
+int singleListRead(struct SingleList* list, int index, int* varPtr);
 
-//append to list
-void listAdd(struct List* list, int item);
+int singleListAdd(struct SingleList* list, int entity);
 
-//remove from list
-void listRem(struct List* list, int index);
+int singleListAddFront(struct SingleList* list, int entity);
 
-//read from list into var
-void listRead(struct List* list, int index, int* entity);
+int singleListRem(struct SingleList* list, int index);
 
-//free list from memory
-void listDest(struct List* list);
+void singleListPrint(struct SingleList* list);
 
-//search through list for item
-int listSearch(struct List* list, int item);
+int singleListGetSize(struct SingleList* list);
 
-//get size of list
-int listSize(struct List* list);
-
-//return whether or not list is empty
-int listIsEmpty(struct List* list);
-
-// resizes list to a size given
-int listResize(struct List* list, int size);
-
-//truncates list to a size given
-int listTruncate(struct List* list, int size);
+int singleListIsEmpty(struct SingleList* list);

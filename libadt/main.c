@@ -4,28 +4,38 @@
 
 int main()
 {
-    struct List* l;
+    struct SingleList* l;
     int i;
-    l = listConst(5);
+    l = singleListConst();
 
-    for(int i=0; i<5; i++)
-    {
-        listAdd(l,i);
-    }    
+    //List is empty
+    printf("\n%d\n", singleListIsEmpty(l));
 
-    listPrintFull(l); // prints [0 1 2 3 4]
+    //Add to back of list
+    singleListAdd(l, 5);
+    singleListAdd(l, 2);
 
-    listResize(l,10); 
-    listPrintFull(l); // prints [0 1 2 3 4 0 0 0 0 0]
+    //List is not empty
+    printf("\n%d\n\n", singleListIsEmpty(l));
 
-    listResize(l, 7); 
-    listPrintFull(l); // prints [0 1 2 3 4 0 0]
+    //Print list content
+    singleListPrint(l);
+    printf("\n");
 
-    listResize(l,1); 
-    listPrintFull(l); // prints [0 1 2 3 4]
+    //Add to front of list
+    singleListAddFront(l,10);
+    singleListPrint(l);
 
-    listTruncate(l,1);
-    listPrintFull(l);
+    //Reading Variable
+    singleListRead(l, 1, &i);
+    printf("\nItem Read: %d\n", i);
 
-    listDest(l);
+    //Get list size
+    printf("\nSize: %d\n", singleListGetSize(l));
+    
+    singleListRem(l, 1);
+    singleListPrint(l);
+
+    singleListDest(l);
+   // singleListPrint(l);
 }
