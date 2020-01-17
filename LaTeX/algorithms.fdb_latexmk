@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1579275319 "/home/kwaks/Algorithms/LaTeX/algorithms.tex" "/home/kwaks/Algorithms/LaTeX/algorithms.pdf" "algorithms" 1579275345
+["pdflatex"] 1579282016 "/home/kwaks/Algorithms/LaTeX/algorithms.tex" "/home/kwaks/Algorithms/LaTeX/algorithms.pdf" "algorithms" 1579282018
   "/home/kwaks/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1578677123 785589 db11c525902e3cde2da380eccbe312bf ""
   "/home/kwaks/.miktex/texmfs/data/pdftex/config/pdftex.map" 1579183886 25648 05532b267bee6ddc7a89371aadda7555 ""
   "/home/kwaks/.miktex/texmfs/install/fonts/tfm/public/cm/cmbx10.tfm" 1578677114 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -33,13 +33,13 @@
   "/home/kwaks/.miktex/texmfs/install/tex/latex/listings/lstlang1.sty" 1579182932 207561 aebe3e8af1b68d971e7e9a0dfafd415b ""
   "/home/kwaks/.miktex/texmfs/install/tex/latex/listings/lstmisc.sty" 1579182932 79106 b10a64745378a9ff5b2568d10a7bf108 ""
   "/home/kwaks/.miktex/texmfs/install/tex/latex/titling/titling.sty" 1579183884 7358 95ac619994bd30d405a74f3eca431c84 ""
-  "/home/kwaks/Algorithms/LaTeX/algorithms.aux" 1579275320 99 de8749142c4e9156090a31ac08986396 ""
-  "/home/kwaks/Algorithms/LaTeX/algorithms.tex" 1579275345 7665 3a49d60045367cdf31b9b30a44bc0fcb ""
-  "algorithms.aux" 1579275320 99 de8749142c4e9156090a31ac08986396 "pdflatex"
-  "algorithms.tex" 1579275345 7665 3a49d60045367cdf31b9b30a44bc0fcb ""
+  "/home/kwaks/Algorithms/LaTeX/algorithms.aux" 1579282017 99 de8749142c4e9156090a31ac08986396 ""
+  "/home/kwaks/Algorithms/LaTeX/algorithms.tex" 1579282016 7665 3a49d60045367cdf31b9b30a44bc0fcb ""
+  "algorithms.aux" 1579282017 99 de8749142c4e9156090a31ac08986396 "pdflatex"
+  "algorithms.tex" 1579282016 7665 3a49d60045367cdf31b9b30a44bc0fcb ""
   (generated)
-  "/home/kwaks/Algorithms/LaTeX/algorithms.log"
-  "algorithms.log"
-  "algorithms.aux"
   "algorithms.pdf"
+  "algorithms.log"
   "/home/kwaks/Algorithms/LaTeX/algorithms.pdf"
+  "/home/kwaks/Algorithms/LaTeX/algorithms.log"
+  "algorithms.aux"
