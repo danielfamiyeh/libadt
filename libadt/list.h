@@ -1,21 +1,20 @@
-struct SingleList;
+//Opaque doubly-linked list struct type definition
+struct DoubleList;
 
-//constructor
-struct SingleList* singleListConst();
+struct DoubleList* doubleListConst();
 
-//destructor
-void singleListDest(struct SingleList* list);
+void doubleListDest(struct DoubleList* list);
 
-int singleListRead(struct SingleList* list, int index, int* varPtr);
+int doubleListAdd(struct DoubleList* list, int entity);
 
-int singleListAdd(struct SingleList* list, int entity);
+int doubleListAddFront(struct DoubleList* list, int entity);
 
-int singleListAddFront(struct SingleList* list, int entity);
+int doubleListRem(struct DoubleList* list, int index);
 
-int singleListRem(struct SingleList* list, int index);
+void doubleListPrint(struct DoubleList* list);
 
-void singleListPrint(struct SingleList* list);
+int doubleListSearch(struct DoubleList* list, int val);
 
-int singleListGetSize(struct SingleList* list);
+int doubleListGetSize(struct DoubleList* list);
 
-int singleListIsEmpty(struct SingleList* list);
+int doubleListIsEmpty(struct DoubleList* list);

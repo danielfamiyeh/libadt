@@ -1,41 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
+#include "SingleLinkedList/singleLinkedList.h"
 
 int main()
 {
-    struct SingleList* l;
-    int i;
-    l = singleListConst();
+    struct SingleList* sll = singleListConst();
+    struct DoubleList* list = doubleListConst();
+    singleListAdd(sll, 1);
+    singleListAddFront(sll, 2);
+    singleListAdd(sll, 9);
 
-    //List is empty
-    printf("\n%d\n", singleListIsEmpty(l));
+    printf("%d\n", singleListSearch(sll, 2));
 
-    //Add to back of list
-    singleListAdd(l, 5);
-    singleListAdd(l, 2);
+  //  singleListPrint(sll);
 
-    //List is not empty
-    printf("\n%d\n\n", singleListIsEmpty(l));
-
-    //Print list content
-    singleListPrint(l);
-    printf("\n");
-
-    //Add to front of list
-    singleListAddFront(l,10);
-    singleListPrint(l);
-
-    //Reading Variable
-    singleListRead(l, 1, &i);
-    printf("\nItem Read: %d\n", i);
-
-    //Get list size
-    printf("\nSize: %d\n", singleListGetSize(l));
-    
-    singleListRem(l, 1);
-    singleListPrint(l);
-
-    singleListDest(l);
-   // singleListPrint(l);
+    singleListDest(sll);
 }

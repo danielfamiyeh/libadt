@@ -1,12 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
+//List node struct definition
 struct ListNode
 {
     int data;
     struct ListNode* next;
 };
 
+//List struct definition
 struct SingleList
 {
     int size;
@@ -14,7 +17,7 @@ struct SingleList
     struct ListNode* tail;
 };
 
-
+//List node constructor
 struct ListNode* listNodeConst(int val)
 {
     struct ListNode* node;
@@ -23,11 +26,13 @@ struct ListNode* listNodeConst(int val)
     node->next = NULL;
 }
 
+//List node destructor
 void listNodeDest(struct ListNode* node)
 {
     free(node);
 }
 
+//Single linked-list constructor
 struct SingleList* singleListConst()
 {
     struct SingleList* list;
@@ -39,6 +44,7 @@ struct SingleList* singleListConst()
     return list;
 }
 
+//Append to end of SLL
 int singleListAdd(struct SingleList* list, int entity)
 {
     struct ListNode* node;
@@ -66,6 +72,7 @@ int singleListAdd(struct SingleList* list, int entity)
     
 }
 
+//Add to front of SLL
 int singleListAddFront(struct SingleList* list, int entity)
 {
     struct ListNode* node;
@@ -94,6 +101,7 @@ int singleListAddFront(struct SingleList* list, int entity)
     
 }
 
+//Read from index into variable
 int singleListRead(struct SingleList* list, int index, int* varPtr)
 {
     int count = 0;
@@ -110,16 +118,40 @@ int singleListRead(struct SingleList* list, int index, int* varPtr)
     
 }
 
+
+//Search for an item.
+int singleListSearch(struct SingleList* list, int val)
+{
+    int index = -1;
+    int count = 0;
+    struct ListNode* current = list->head;
+    while(current)
+    {
+        if(current->data == val)
+        {
+            index = count;
+            break;
+        }
+        current = current->next;
+        count++;
+    }
+
+    return index;
+}
+
+//Get list size
 int singleListGetSize(struct SingleList* list)
 {
     return list->size;
 }
 
+//Return if list is empty
 int singleListIsEmpty(struct SingleList* list)
 {
     return (list->size == 0) ? 1 : 0;
 }
 
+//Print list
 void singleListPrint(struct SingleList* list)
 {
     if(list->size > 0)
@@ -135,6 +167,8 @@ void singleListPrint(struct SingleList* list)
     }
 }
 
+
+//SLL destructor
 void singleListDest(struct SingleList* list)
 {
     struct ListNode* current = list->head;
@@ -148,6 +182,8 @@ void singleListDest(struct SingleList* list)
     free(list);
 }
 
+
+//Remove item from list at index
 int singleListRem(struct SingleList* list, int index)
 {
     if(list->size > 0 && index >= 0 && index <= list->size)
