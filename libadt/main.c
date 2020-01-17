@@ -1,20 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Stack/stackArray.h"
+#include "Queue/queueList.h"
 
 int main()
 {
-    struct StackArray* stack = stackArrayConst(25);
+    struct QueueList* queue = queueListConst();
 
-    for(int i=0; i<10; i++)
-    {
-        stackArrayPush(stack, i);
-    }
-    stackArrayPrint(stack);
-    stackArrayPop(stack);
-    stackArrayPrint(stack);
+    queueListAdd(queue, 3);
+    queueListAdd(queue, 9);
+    queueListAdd(queue, 1);
+    queueListPrint(queue);
 
-    stackArrayDest(stack);
+    int q = queueListRem(queue);
+    printf("%d", queueListPeek(queue));
+
+    queueListPrint(queue);
+
+    queueListDest(queue);
     return 0;
 }
