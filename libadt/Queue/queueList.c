@@ -120,6 +120,24 @@ void queueListPrint(struct QueueList* queue)
     }
 }
 
+int queueListSearch(struct QueueList* queue, int entity)
+{
+    struct Node* current = queue->head;
+    int index = 0;
+
+    while(current)
+    {
+        if(current->val == entity)
+        {
+            return index;
+        }
+        index++;
+        current = current->next;
+    }
+    index = -1;
+    return index;
+}
+
 int queueListPeek(struct QueueList* queue)
 {
     return queue->head->val;

@@ -1,22 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Queue/queueList.h"
+#include "Tree/BST.h"
 
 int main()
 {
-    struct QueueList* queue = queueListConst();
+    struct BSTNode* root = BSTConst(3);
 
-    queueListAdd(queue, 3);
-    queueListAdd(queue, 9);
-    queueListAdd(queue, 1);
-    queueListPrint(queue);
+    BSTInsert(root, 5);
+    BSTInsert(root, 2);
+    //BSTInsert(root, 9);
+    
+    BSTTraverseInOrder(root);
+    BSTDelete(root, 2);
+    printf("\n");
+    BSTTraverseInOrder(root);
 
-    int q = queueListRem(queue);
-    printf("%d", queueListPeek(queue));
-
-    queueListPrint(queue);
-
-    queueListDest(queue);
+    BSTDest(root);
     return 0;
 }

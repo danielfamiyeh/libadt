@@ -101,7 +101,7 @@ int listSize(struct List* list)
 	return list->num;
 }
 
-//returns treu of list is empty or false of not
+//returns true of list is empty or false of not
 int listIsEmpty(struct List* list)
 {
 	return (list->num == 0) ? 1 : 0;

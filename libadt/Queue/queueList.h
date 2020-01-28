@@ -11,3 +11,5 @@ int queueListAdd(struct QueueList* queue, int entity);
 int queueListRem(struct QueueList* queue);
 
 void queueListPrint(struct QueueList* queue);
+
+int queueListSearch(struct QueueList* queue, int entity);
