@@ -1,21 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Tree/BST.h"
+#include "AssocArr/HMap.h"
 
 int main()
 {
-    struct BSTNode* root = BSTConst(3);
+    struct HMap* hmap = h_map_init(5);
+    hmap_print(hmap);
 
-    BSTInsert(root, 5);
-    BSTInsert(root, 2);
-    //BSTInsert(root, 9);
-    
-    BSTTraverseInOrder(root);
-    BSTDelete(root, 2);
-    printf("\n");
-    BSTTraverseInOrder(root);
+    hmap_insert(hmap, "fs", 3);
+    hmap_print(hmap);
 
-    BSTDest(root);
+    hmap_insert(hmap, "fs", 5);
+    hmap_print(hmap);
+
+    hmap_insert(hmap, "value one", 12);
+    hmap_print(hmap);
+
+    hmap_insert(hmap, "aa", 5);
+    hmap_print(hmap);
+
+    hmap_dest(hmap);
     return 0;
 }
