@@ -1,3 +1,0 @@
-struct BST;
-
-struct bstNode;
